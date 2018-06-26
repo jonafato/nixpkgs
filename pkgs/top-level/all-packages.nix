@@ -16598,7 +16598,7 @@ with pkgs;
   });
 
   inherit (nodePackages) imapnotify;
-  
+
   # Impressive, formerly known as "KeyJNote".
   impressive = callPackage ../applications/office/impressive { };
 
@@ -18637,6 +18637,11 @@ with pkgs;
   vmpk = callPackage ../applications/audio/vmpk { };
 
   vnstat = callPackage ../applications/networking/vnstat { };
+
+  vocal = callPackage ../applications/audio/vocal {
+    inherit (gnome3) libgee;
+    inherit (gst_all_1);
+  };
 
   vogl = libsForQt5.callPackage ../development/tools/vogl { };
 
